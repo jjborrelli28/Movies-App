@@ -1,5 +1,6 @@
 import Container from "react-bootstrap/Container";
 import { useFetch } from "../../hooks/useFetch";
+import { MostPopularMovies } from "./MostPopularMovies";
 
 export const HomeScreen = () => {
   const url =
@@ -13,6 +14,7 @@ export const HomeScreen = () => {
   return (
     <Container>
       <h1>HomeScreen</h1>
+      {movies ? <MostPopularMovies movies={movies} /> : <h1>car</h1>}
     </Container>
   );
 };
