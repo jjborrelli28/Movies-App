@@ -2,7 +2,6 @@ import Container from "react-bootstrap/Container";
 import { useFetch } from "../../hooks/useFetch";
 import { MoviesGrid } from "./MoviesGrid";
 import { useSelector } from "react-redux";
-import { SearchForm } from "./SearchForm";
 import { SpinnerContainer } from "./SpinnerContainer";
 
 export const HomeScreen = () => {
@@ -15,7 +14,6 @@ export const HomeScreen = () => {
   return (
     <Container>
       <h1 className="mt-4 mb-4">Movies App</h1>
-      <SearchForm />
       {movies ? <MoviesGrid movies={movies} /> : <SpinnerContainer />}
     </Container>
   );
