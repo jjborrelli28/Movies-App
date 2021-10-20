@@ -1,20 +1,22 @@
 import Container from "react-bootstrap/Container";
 import { useFetch } from "../../hooks/useFetch";
-import { MostPopularMovies } from "./MostPopularMovies";
+import { MoviesGrid } from "./MoviesGrid";
+import { useSelector } from "react-redux";
+import { SearchForm } from "./SearchForm";
+import { SpinnerContainer } from "./SpinnerContainer";
 
 export const HomeScreen = () => {
-  const url =
-    "https://api.themoviedb.org/3/discover/movie/?api_key=b952d788417d06b0a7d346629ce8cc85";
+  const { url } = useSelector((state) => state.url);
 
   const { data } = useFetch(url);
 
   const movies = data?.results;
 
-  console.log(movies);
   return (
     <Container>
-      <h1>HomeScreen</h1>
-      {movies ? <MostPopularMovies movies={movies} /> : <h1>car</h1>}
+      <h1 className="mt-4 mb-4">Movies App</h1>
+      <SearchForm />
+      {movies ? <MoviesGrid movies={movies} /> : <SpinnerContainer />}
     </Container>
   );
 };
