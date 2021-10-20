@@ -3,8 +3,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { InputSearch } from "./InputSearch";
+import { StarIcon } from "./StarIcon";
 
 export const NavBar = () => {
+  const rating = [5, 4, 3, 2, 1];
 
   return (
     <Navbar bg="dark bg-gradient" variant="dark" expand="lg" className="p-4">
@@ -17,16 +19,16 @@ export const NavBar = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="/">Home</Nav.Link>
-            <NavDropdown title="Filter by" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
+            <NavDropdown title="Filter by rating" id="navbarScrollingDropdown">
+              {rating.map((stars) => (
+                <NavDropdown.Item href="#action3">
+                  {Array(stars)
+                    .fill(stars)
+                    .map((star) => (
+                      <StarIcon />
+                    ))}
+                </NavDropdown.Item>
+              ))}
             </NavDropdown>
           </Nav>
           <InputSearch />

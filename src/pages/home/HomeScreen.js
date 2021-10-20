@@ -13,7 +13,6 @@ export const HomeScreen = () => {
 
   return (
     <Container>
-      <h1 className="mt-4 mb-4">Movies App</h1>
       {movies ? <MoviesGrid movies={movies} /> : <SpinnerContainer />}
     </Container>
   );
