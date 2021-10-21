@@ -4,8 +4,15 @@ import Card from "react-bootstrap/Card";
 import Alert from "react-bootstrap/Alert";
 import ImageNoAvailable from "../../assets/ImageNoAvailable.png";
 import { RenderStars } from "../../shared/RenderStars";
+import { useHistory } from "react-router-dom";
 
 export const MoviesGrid = ({ movies }) => {
+  const history = useHistory();
+
+  const handleMovieSelect = (movieID) => {
+    history.push(`/movie/${movieID}`);
+  };
+
   return (
     <div>
       {movies.length > 0 ? (
@@ -15,9 +22,12 @@ export const MoviesGrid = ({ movies }) => {
               i < 18 && (
                 <Col
                   key={movie.id}
-                  className="mb-4 animate__animated animate__fadeIn animate__slow"
+                  className="mb-4 animate__animated animate__fadeIn animate__slow colum-grid"
                 >
-                  <Card>
+                  <Card
+                    onClick={() => handleMovieSelect(movie.id)}
+                    className="card-grid"
+                  >
                     <Card.Img
                       variant="top"
                       src={

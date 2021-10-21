@@ -12,7 +12,6 @@ export const HomeScreen = () => {
 
   const movies = useFilter(data?.results);
 
-  console.log(movies);
   return (
     <Container>
       {movies ? <MoviesGrid movies={movies} /> : <SpinnerContainer />}

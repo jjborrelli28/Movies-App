@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import Badge from "react-bootstrap/esm/Badge";
 
 export const Rating = () => {
   const { rating } = useSelector((state) => state.rating);
@@ -18,7 +19,12 @@ export const Rating = () => {
   };
 
   return (
-    <div>
+    <Badge
+      bg="primary"
+      style={{ color: "#ffffff" }}
+      className="m-2 ps-2 pe-1 pt-2 pb-2 d-flex align-items-center justify-content-center"
+    >
+      Rating: &nbsp;
       {Array(5)
         .fill(null)
         .map((_, index) => (
@@ -30,6 +36,6 @@ export const Rating = () => {
             onClick={() => handleRatingSelect(index)}
           ></i>
         ))}
-    </div>
+    </Badge>
   );
 };

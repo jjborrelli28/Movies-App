@@ -7,7 +7,6 @@ import { types } from "../types/types";
 
 export const InputSearch = () => {
   const { value } = useSelector((state) => state.search);
-
   const dispatch = useDispatch();
 
   const handleInputChange = ({ target }) => {
@@ -17,31 +16,29 @@ export const InputSearch = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (value !== "") {
-      const action = { type: types.SEARCH_URL, payload: value };
+    if (value === "") {
+      const action = { type: types.DISCOVER_URL };
       dispatch(action);
     } else {
-      const action = { type: types.DISCOVER_URL };
+      const action = { type: types.SEARCH_URL, payload: value };
       dispatch(action);
     }
   };
 
   return (
-    <div className="w-100 d-flex justify-content-end">
-      <Form className="d-flex" onSubmit={handleSubmit}>
-        <InputGroup>
-          <FormControl
-            type="search"
-            className="mr-2"
-            placeholder="Search by name"
-            value={value}
-            onChange={handleInputChange}
-          />
-          <Button variant="primary" onClick={handleSubmit}>
-            Search
-          </Button>
-        </InputGroup>
-      </Form>
-    </div>
+    <Form className="d-flex" onSubmit={handleSubmit}>
+      <InputGroup>
+        <FormControl
+          type="search"
+          className="mr-2"
+          placeholder="Search by name"
+          value={value}
+          onChange={handleInputChange}
+        />
+        <Button variant="primary" onClick={handleSubmit}>
+          <i className="fas fa-search"></i>
+        </Button>
+      </InputGroup>
+    </Form>
   );
 };

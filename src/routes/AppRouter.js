@@ -17,7 +17,7 @@ export const AppRouter = () => {
         <BreadCrumb />
         <Switch>
           <Route exact path="/" component={HomeScreen} />
-          <Route exact path="/movie" component={MovieScreen} />
+          <Route exact path="/movie/:movieID" component={MovieScreen} />
           <Redirect to="/" />
         </Switch>
       </div>

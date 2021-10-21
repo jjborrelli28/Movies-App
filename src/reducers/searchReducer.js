@@ -1,7 +1,7 @@
 import { types } from "../types/types";
 
 const initialState = {
-  search: "",
+  value: "",
 };
 
 export const searchReducer = (state = initialState, action) => {

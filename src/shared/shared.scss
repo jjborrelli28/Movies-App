@@ -1,3 +1,7 @@
 .stars {
   transition: all 0.33s;
 }
+
+.stars:hover {
+  cursor: pointer;
+}

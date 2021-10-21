@@ -8,3 +8,15 @@
   justify-content: center;
   align-items: center;
 }
+
+.colum-grid {
+  transition: all 0.33s;
+}
+
+.colum-grid:hover {
+  transform: scale(1.033);
+}
+
+.card-grid:hover {
+  cursor: pointer;
+}
