@@ -21,7 +21,6 @@ export const Rating = () => {
   return (
     <Badge
       bg="primary"
-      style={{ color: "#ffffff" }}
       className="m-2 ps-2 pe-1 pt-2 pb-2 d-flex align-items-center justify-content-center"
     >
       Rating: &nbsp;

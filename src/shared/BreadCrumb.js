@@ -1,13 +1,17 @@
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Container from "react-bootstrap/esm/Container";
+import { useSelector } from "react-redux";
 
 export const BreadCrumb = () => {
+  const { route, title } = useSelector((state) => state.route);
+
   return (
     <Container>
-      <Breadcrumb className="p-3 pt-0">
+      <Breadcrumb>
         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-        <Breadcrumb.Item href="/movie">Most Popular</Breadcrumb.Item>
+        {route && <Breadcrumb.Item href={route}>{title}</Breadcrumb.Item>}
       </Breadcrumb>
+      <hr style={{ heigth: "0.1rem" }} />
     </Container>
   );
 };

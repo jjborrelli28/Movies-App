@@ -17,6 +17,10 @@
   transform: scale(1.033);
 }
 
+.card-grid {
+  background-color: gray !important;
+}
+
 .card-grid:hover {
   cursor: pointer;
 }

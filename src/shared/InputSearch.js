@@ -4,10 +4,13 @@ import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { types } from "../types/types";
+import { useHistory } from "react-router";
 
 export const InputSearch = () => {
   const { value } = useSelector((state) => state.search);
   const dispatch = useDispatch();
+
+  const history = useHistory();
 
   const handleInputChange = ({ target }) => {
     const action = { type: types.SEARCH, payload: target.value };
@@ -23,6 +26,8 @@ export const InputSearch = () => {
       const action = { type: types.SEARCH_URL, payload: value };
       dispatch(action);
     }
+    dispatch({ type: types.ROUTE_OFF });
+    history.push("/");
   };
 
   return (

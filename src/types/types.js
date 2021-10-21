@@ -10,4 +10,7 @@ export const types = {
   TWO_STARS: 2,
   ONE_STARS: 1,
   DEFAULT: 0,
+
+  ROUTE_ON: "ROUTE_ON",
+  ROUTE_OFF: "ROUTE_OFF",
 };
