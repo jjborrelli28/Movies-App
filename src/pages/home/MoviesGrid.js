@@ -26,20 +26,19 @@ export const MoviesGrid = ({ movies }) => {
                           : ImageNoAvailable
                       }
                     />
-                    <div
-                      className="d-flex justify-content-end"
-                      style={{
-                        position: "absolute",
-                        backgroundColor: "rgba(0, 0, 0, .5)",
-                        width: "100%",
-                        padding: ".5rem",
-                      }}
-                    >
-                      {RenderStars(
-                        Math.ceil(movie.vote_average / 2),
-                        "star-card-key-"
-                      )}
-                    </div>
+                    {
+                      <div
+                        className="d-flex justify-content-end"
+                        style={{
+                          position: "absolute",
+                          backgroundColor: "rgba(0, 0, 0, .5)",
+                          width: "100%",
+                          padding: ".5rem",
+                        }}
+                      >
+                        {RenderStars(Math.ceil(movie.vote_average / 2))}
+                      </div>
+                    }
                   </Card>
                   <div
                     className="d-flex justify-content-center mt-1"

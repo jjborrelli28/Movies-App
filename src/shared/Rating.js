@@ -1,22 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
 
 export const Rating = () => {
-  const { stars } = useSelector((state) => state.rating);
+  const { rating } = useSelector((state) => state.rating);
   const dispatch = useDispatch();
 
-  const handleRatingSelect = ({ target }) => {
-    if (parseInt(target.id) === stars) {
-      const action = {
+  const handleRatingSelect = (index) => {
+    index++;
+    if (index === rating) {
+      dispatch({
         type: 0,
-      };
-      dispatch(action);
+      });
     } else {
-      const action = {
-        type: parseInt(target.id),
-      };
-      dispatch(action);
-      console.log(parseInt(target.id));
-      console.log(stars);
+      dispatch({
+        type: index,
+      });
     }
   };
 
@@ -24,13 +21,13 @@ export const Rating = () => {
     <div>
       {Array(5)
         .fill(null)
-        .map((star, i) => (
+        .map((_, index) => (
           <i
             className="fas fa-star me-1 stars"
-            id={i + 1}
-            style={i < stars ? { color: "#efb810" } : { color: "#000000" }}
-            key={i}
-            onClick={handleRatingSelect}
+            id={index + 1}
+            style={index < rating ? { color: "#efb810" } : { color: "#000000" }}
+            key={index}
+            onClick={() => handleRatingSelect(index)}
           ></i>
         ))}
     </div>

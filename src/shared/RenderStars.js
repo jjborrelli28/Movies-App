@@ -1,11 +1,10 @@
-export const RenderStars = (stars, key) => {
-  return Array(stars)
+export const RenderStars = (stars) => {
+  return Array(stars === 0 ? 1 : stars)
     .fill(null)
-    .map((star, i) => (
+    .map((_, index) => (
       <i
         className="fas fa-star me-1"
-        key={i}
-        id={i}
+        key={index}
         style={{ color: "#efb810" }}
       ></i>
     ));

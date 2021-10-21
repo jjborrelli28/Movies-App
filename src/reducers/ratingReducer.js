@@ -1,46 +1,53 @@
 import { types } from "../types/types";
 
 const initialState = {
-  rating: `&vote_average.gte=0&vote_average.lte=10`,
-  stars: 0,
+  rating: 0,
+  max: 10,
+  min: 0,
 };
 
 export const ratingReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.FIVE_STARS:
       return {
-        rating: `&vote_average.gte=8&vote_average.lte=10`,
-        stars: types.FIVE_STARS,
+        rating: 5,
+        max: 10,
+        min: 8,
       };
 
     case types.FOUR_STARS:
       return {
-        rating: `&vote_average.gte=6&vote_average.lte=8`,
-        stars: types.FOUR_STARS,
+        rating: 4,
+        max: 8,
+        min: 6,
       };
 
     case types.THREE_STARS:
       return {
-        rating: `&vote_average.gte=4&vote_average.lte=6`,
-        stars: types.THREE_STARS,
+        rating: 3,
+        max: 6,
+        min: 4,
       };
 
     case types.TWO_STARS:
       return {
-        rating: `&vote_average.gte=2&vote_average.lte=4`,
-        stars: types.TWO_STARS,
+        rating: 2,
+        max: 4,
+        min: 2,
       };
 
     case types.ONE_STARS:
       return {
-        rating: `&vote_average.gte=1&vote_average.lte=2`,
-        stars: types.ONE_STARS,
+        rating: 1,
+        max: 2,
+        min: 0,
       };
 
     case types.DEFAULT:
       return {
-        rating: `&vote_average.gte=0&vote_average.lte=10`,
-        stars: 0,
+        rating: 0,
+        max: 10,
+        min: 0,
       };
 
     default:

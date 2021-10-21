@@ -3,15 +3,14 @@ import { useFetch } from "../../hooks/useFetch";
 import { MoviesGrid } from "./MoviesGrid";
 import { useSelector } from "react-redux";
 import { SpinnerContainer } from "./SpinnerContainer";
+import { useFilter } from "../../hooks/useFilter";
 
 export const HomeScreen = () => {
   const { url } = useSelector((state) => state.url);
 
-  const { rating } = useSelector((state) => state.rating);
+  const { data } = useFetch(url);
 
-  const { data } = useFetch(url + rating);
-
-  const movies = data?.results;
+  const movies = useFilter(data?.results);
 
   console.log(movies);
   return (
