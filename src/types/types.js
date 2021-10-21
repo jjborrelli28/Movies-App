@@ -3,4 +3,11 @@ export const types = {
   SEARCH_URL: "SEARCH_URL",
 
   SEARCH: "SEARCH",
+
+  FIVE_STARS: 5,
+  FOUR_STARS: 4,
+  THREE_STARS: 3,
+  TWO_STARS: 2,
+  ONE_STARS: 1,
+  DEFAULT: 0,
 };

@@ -7,10 +7,13 @@ import { SpinnerContainer } from "./SpinnerContainer";
 export const HomeScreen = () => {
   const { url } = useSelector((state) => state.url);
 
-  const { data } = useFetch(url);
+  const { rating } = useSelector((state) => state.rating);
+
+  const { data } = useFetch(url + rating);
 
   const movies = data?.results;
 
+  console.log(movies);
   return (
     <Container>
       {movies ? <MoviesGrid movies={movies} /> : <SpinnerContainer />}

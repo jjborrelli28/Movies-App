@@ -5,6 +5,7 @@ import { store } from "./store/store";
 import { AppRouter } from "./routes/AppRouter";
 import "./styles/styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "animate.css";
 
 ReactDOM.render(
   <React.StrictMode>
