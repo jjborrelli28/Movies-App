@@ -26,7 +26,8 @@ export const FormSearch = () => {
       const action = { type: types.SEARCH_URL, payload: value };
       dispatch(action);
     }
-    dispatch({ type: types.ROUTE_OFF });
+    dispatch({ type: types.SEARCH, payload: value });
+    dispatch({ type: types.TITLE_OFF });
     history.push("/");
   };
 

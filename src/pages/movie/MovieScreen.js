@@ -18,9 +18,8 @@ export const MovieScreen = () => {
 
   if (data) {
     const action = {
-      type: types.ROUTE_ON,
+      type: types.TITLE_ON,
       payload: {
-        route: `/movie/${movieID}`,
         title: `${data.title}`,
       },
     };

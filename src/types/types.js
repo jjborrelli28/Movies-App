@@ -4,6 +4,8 @@ export const types = {
 
   FORM: "FORM",
 
+  SEARCH: "SEARCH",
+
   FIVE_STARS: 5,
   FOUR_STARS: 4,
   THREE_STARS: 3,
@@ -11,6 +13,6 @@ export const types = {
   ONE_STARS: 1,
   DEFAULT: 0,
 
-  ROUTE_ON: "ROUTE_ON",
-  ROUTE_OFF: "ROUTE_OFF",
+  TITLE_ON: "TITLE_ON",
+  TITLE_OFF: "TITLE_OFF",
 };
