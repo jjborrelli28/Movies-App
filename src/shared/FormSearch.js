@@ -6,14 +6,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { types } from "../types/types";
 import { useHistory } from "react-router";
 
-export const InputSearch = () => {
-  const { value } = useSelector((state) => state.search);
+export const FormSearch = () => {
+  const { value } = useSelector((state) => state.form);
   const dispatch = useDispatch();
 
   const history = useHistory();
 
   const handleInputChange = ({ target }) => {
-    const action = { type: types.SEARCH, payload: target.value };
+    const action = { type: types.FORM, payload: target.value };
     dispatch(action);
   };
 

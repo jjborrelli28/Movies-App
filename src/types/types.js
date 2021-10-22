@@ -2,7 +2,7 @@ export const types = {
   DISCOVER_URL: "DISCOVER_URL",
   SEARCH_URL: "SEARCH_URL",
 
-  SEARCH: "SEARCH",
+  FORM: "FORM",
 
   FIVE_STARS: 5,
   FOUR_STARS: 4,

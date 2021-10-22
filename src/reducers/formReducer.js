@@ -4,9 +4,9 @@ const initialState = {
   value: "",
 };
 
-export const searchReducer = (state = initialState, action) => {
+export const formReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.SEARCH:
+    case types.FORM:
       return {
         value: action.payload,
       };

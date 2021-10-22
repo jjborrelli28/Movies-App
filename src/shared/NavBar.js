@@ -1,7 +1,7 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import { InputSearch } from "./InputSearch";
+import { FormSearch } from "./FormSearch";
 import { Rating } from "./Rating";
 
 export const NavBar = () => {
@@ -17,7 +17,7 @@ export const NavBar = () => {
             navbarScroll
           ></Nav>
           <Rating />
-          <InputSearch />
+          <FormSearch />
         </Navbar.Collapse>
       </Container>
     </Navbar>
