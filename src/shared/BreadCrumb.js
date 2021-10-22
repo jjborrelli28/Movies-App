@@ -12,11 +12,19 @@ export const BreadCrumb = () => {
         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
         {(title && (
           <>
-            <Breadcrumb.Item>Movie</Breadcrumb.Item>
-            <Breadcrumb.Item>{title}</Breadcrumb.Item>
+            <Breadcrumb.Item className="bread-crumb-text">
+              Movie
+            </Breadcrumb.Item>
+            <Breadcrumb.Item className="bread-crumb-text">
+              {title}
+            </Breadcrumb.Item>
           </>
         )) ||
-          (search && <Breadcrumb.Item>Results for "{search}"</Breadcrumb.Item>)}
+          (search && (
+            <Breadcrumb.Item className="bread-crumb-text">
+              Results for "{search}"
+            </Breadcrumb.Item>
+          ))}
       </Breadcrumb>
       <hr style={{ heigth: "0.1rem" }} />
     </Container>

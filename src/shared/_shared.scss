@@ -5,3 +5,13 @@
 .stars:hover {
   cursor: pointer;
 }
+
+.bread-crumb-text {
+  color: lightgray;
+}
+
+.bread-crumb-text:hover {
+  a {
+    cursor: default !important;
+  }
+}
